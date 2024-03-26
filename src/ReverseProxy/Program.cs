@@ -1,6 +1,6 @@
 
 using System.Net;
-using Infrastructure;
+using Infrastructure.OTel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,10 +13,12 @@ builder.WebHost.ConfigureKestrel(webBuilder =>
 builder.Services.AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
-builder.Services.AddOpenTelemetry();
+builder.AddOpenTelemetry();
 
 var app = builder.Build();
 
+// app.UseOpenTelemetryPrometheusScrapingEndpoint();
+app.MapPrometheusScrapingEndpoint();
 app.MapReverseProxy();
 
 app.Run();

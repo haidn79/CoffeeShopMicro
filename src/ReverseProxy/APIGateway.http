@@ -1,0 +1,6 @@
+@ReverseProxy_HostAddress = http://localhost:8080
+
+GET {{ReverseProxy_HostAddress}}/counter-api/v1/api/Check HTTP/1.1
+content-type: application/json
+
+###
