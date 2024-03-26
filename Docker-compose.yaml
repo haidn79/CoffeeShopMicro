@@ -7,3 +7,8 @@ services:
     ports:
       - "16686:16686"
       - "4317:4317"
+    networks:
+      - coffee-shop-network
+    
+networks:
+  coffee-shop-network:  

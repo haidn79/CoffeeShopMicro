@@ -20,7 +20,14 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Contracts\Contracts.csproj" />
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Application\Queries\" />
+      <Folder Include="Infrastructure\" />
+      <Folder Include="Presentation\" />
     </ItemGroup>
 
 </Project>
